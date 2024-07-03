@@ -62,6 +62,8 @@
             border-color: black;
             padding: 5px;
         }
+
+        #qr {color: black;}
     </style>
     <link rel="stylesheet" href="./mecha.css">
 </head>
@@ -89,13 +91,32 @@
             </div>
             <br>
             <div class="col">
-                <button class="btn btn-primary" style="background-color: black;" type="submit">Render</button>
+                <button class="btn btn-primary" style="background-color: black;" id="render"
+                    type="submit">Render</button>
             </div>
         </form>
+
     </div>
+    
+        <div id="qr"></div>
+    
 </body>
 <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <script src="node_modules/qrcode-generator/qrcode.js"></script>
 <script src="./mecha.js"></script>
+<script>
+    document.getElementById('render').addEventListener('click', (e) => {
+        e.preventDefault();
+        let a = document.getElementById('floatingTextarea').value;
+        alert(a);
+        var typeNumber = 4;
+        var errorCorrectionLevel = 'H';
+        var qr = qrcode(typeNumber, errorCorrectionLevel);
+        qr.addData(a);
+        qr.make();
+        document.getElementById('qr').innerHTML =  qr.createImgTag(7,7)+"<br><a href="+ qr.createDataURL(7,7)+"download='download.jpg'>Download</a>";
+        
+    })
+</script>
 
 </html>
