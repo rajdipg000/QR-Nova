@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" rel="stylesheet">
+    <style>
+        * {
+            transition: 0.2s ease-in-out;
+        }
+
+        .alignment {
+            align-items: center;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .nova {
+            background-color: #ffff;
+            padding: 5px;
+            margin: 30px;
+            color: black;
+            font-family: "Ga Maamli", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .nova h1 {
+            position: absolute;
+        }
+
+        .nova ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+        }
+
+        .nova ul li a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: auto;
+            margin: 5px;
+            border-width: 0 0 0 0;
+            border-radius: 1%;
+            transition: 0.2s ease-in-out;
+        }
+
+        .nova ul li a:hover {
+            border-width: 0 0 2px 0;
+            border-radius: 5%;
+            border-style: solid;
+            border-color: black;
+            padding: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="./mecha.css">
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-border"></div>
+    <!--Nav area-->
+    <nav class="nova">
+        <h1>Nova</h1>
+        <ul>
+            <li><a href="#">QR Generator</a></li>
+            <li><a href="#">QR READER</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="alignment">
+        <form action="">
+            <div class="row ">
+                <div class="col-10 form-floating">
+                    <textarea name="text" class="form-control" placeholder="Leave a comment here"
+                        id="floatingTextarea"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="col">
+                <button class="btn btn-primary" style="background-color: black;" type="submit">Render</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="node_modules/qrcode-generator/qrcode.js"></script>
+<script src="./mecha.js"></script>
+
+</html>
