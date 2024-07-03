@@ -63,7 +63,7 @@
             padding: 5px;
         }
 
-        #qr {color: black;}
+        #download {display: none;}
     </style>
     <link rel="stylesheet" href="./mecha.css">
 </head>
@@ -97,9 +97,10 @@
         </form>
 
     </div>
-    
+    <div class="alignment">
         <div id="qr"></div>
-    
+        <a href="" id="download" download="download.jpg">download</a>
+    </div>
 </body>
 <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <script src="node_modules/qrcode-generator/qrcode.js"></script>
@@ -114,7 +115,9 @@
         var qr = qrcode(typeNumber, errorCorrectionLevel);
         qr.addData(a);
         qr.make();
-        document.getElementById('qr').innerHTML =  qr.createImgTag(7,7)+"<br><a href="+ qr.createDataURL(7,7)+"download='download.jpg'>Download</a>";
+        document.getElementById('qr').innerHTML =  qr.createImgTag(7,7);
+        document.getElementById('download').href =  qr.createDataURL(7,7);
+        document.getElementById('download').style = "display:block;color:black"
         
     })
 </script>
