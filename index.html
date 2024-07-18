@@ -17,7 +17,7 @@
 
 <body>
     <div class="cursor"></div>
-    <div class="cursor-border"></div>
+    <!-- <div class="cursor-border"></div> -->
     <!--Nav area-->
     <nav class="nova">
         <h1>Nova</h1>
@@ -28,7 +28,9 @@
     </nav>
     
     <div class="alignment">
-        <marquee>MAX 50 charecters</marquee>
+<div id="warning">
+
+</div>
         <form action="">
             <div class="row ">
                 <div class="col-10 form-floating">
@@ -53,6 +55,21 @@
 <script src="node_modules/qrcode-generator/qrcode.js"></script>
 <script src="./source/mecha.js"></script>
 <script src="./source/renderer.js"></script>
-
+<script>
+    var str="Max len is 50 so keep this in mind"
+    var i=100
+    var c=0
+    $(document).ready(()=>{
+        printer();
+        
+    })
+    function printer () {
+        if(c<str.length){
+            $("#warning").append(str[c]);
+            c++
+            setTimeout(printer,i)
+        }
+    }
+</script>
 </html>
 
