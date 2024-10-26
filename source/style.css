@@ -3,9 +3,13 @@
 }
 
 .alignment {
-    align-items: center;
-    padding: 10px;
-    margin: 5px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: center;
+    align-content: stretch;
+    flex-wrap: wrap;
+    
 }
 
 .nova {
@@ -46,7 +50,15 @@
     border-radius: 5%;
     border-style: solid;
     border-color: black;
-    padding: 5px;
+    padding: -1px;
+}
+
+#selected{
+     border-width: 0 0 2px 0;
+    border-radius: 5%;
+    border-style: solid;
+    border-color: black;
+    padding: -1px;
 }
 
 #download {
@@ -74,4 +86,16 @@
  
 .container button:hover {
     background-color: #008000;
+}
+
+.box{
+    aspect-ratio: 18/9;
+    width:  69pc;
+}
+@media (max-width:600px) {
+ 
+.box{
+    aspect-ratio: 18/9;
+    width:  25pc;
+}   
 }
